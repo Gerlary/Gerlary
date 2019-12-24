@@ -1,0 +1,14 @@
+def together(a,b,ab,abc):
+    return a+b-ab-abc
+st = 40    
+b = dict(A = 25, B = 22, C = 22, AB = 33, AC = 32, BC = 31, ABC = 10)
+AaB = together(b['A'],b['B'],b['AB'],b['ABC'])
+BaC = together(b['C'],b['B'],b['BC'],b['ABC'])
+AaC = together(b['A'],b['C'],b['AC'],b['ABC'])
+OA = b['A'] - AaB - AaC - b['ABC']
+OB = b['B'] - AaB - BaC - b['ABC']
+OC = b['C'] - AaC - BaC - b['ABC']
+OneAut = OA+OB+OC
+TwoAut = AaB+AaC+BaC
+NooneAut = st - OneAut - TwoAut - b['ABC']
+print(OneAut, TwoAut, NooneAut)
